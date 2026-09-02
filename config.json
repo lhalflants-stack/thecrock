@@ -1,0 +1,111 @@
+{
+    "xp": {
+        "min": 10,
+        "max": 25,
+        "cooldown": 60
+    },
+
+    "level_up_channel_id": "1538085810786799626",
+
+    "levels": {
+        "1": {
+            "xp_required": 0,
+            "role_id": "0"
+        },
+
+        "2": {
+            "xp_required": 100,
+            "role_id": "0"
+        },
+
+        "3": {
+            "xp_required": 250,
+            "role_id": "0"
+        },
+
+        "4": {
+            "xp_required": 500,
+            "role_id": "0"
+        },
+
+        "5": {
+            "xp_required": 1000,
+            "role_id": "1537904267732721790"
+        },
+
+        "6": {
+            "xp_required": 1400,
+            "role_id": "0"
+        },
+
+        "7": {
+            "xp_required": 1800,
+            "role_id": "0"
+        },
+
+        "8": {
+            "xp_required": 2200,
+            "role_id": "0"
+        },
+
+        "9": {
+            "xp_required": 2700,
+            "role_id": "0"
+        },
+
+        "10": {
+            "xp_required": 3250,
+            "role_id": "1538082799750225982"
+        },
+
+        "11": {
+            "xp_required": 3800,
+            "role_id": "0"
+        },
+
+        "12": {
+            "xp_required": 4400,
+            "role_id": "0"
+        },
+
+        "13": {
+            "xp_required": 5000,
+            "role_id": "0"
+        },
+
+        "14": {
+            "xp_required": 5500,
+            "role_id": "0"
+        },
+
+        "15": {
+            "xp_required": 6000,
+            "role_id": "1538082851826958336"
+        },
+
+        "16": {
+            "xp_required": 6800,
+            "role_id": "0"
+        },
+
+        "17": {
+            "xp_required": 7600,
+            "role_id": "0"
+        },
+
+        "18": {
+            "xp_required": 8400,
+            "role_id": "0"
+        },
+
+        "19": {
+            "xp_required": 9200,
+            "role_id": "0"
+        },
+
+        "20": {
+            "xp_required": 10000,
+            "role_id": "1538082897326506055"
+        }
+    }
+}
