@@ -1,8 +1,11 @@
+```python
 import os
 import json
 import random
 import sqlite3
 import time
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 import discord
 from dotenv import load_dotenv
@@ -50,9 +53,7 @@ intents.members = True
 class LevelBot(discord.Client):
 
     def __init__(self):
-
         super().__init__(intents=intents)
-
         self.tree = discord.app_commands.CommandTree(self)
 
 
@@ -163,6 +164,7 @@ async def update_role(member, level):
             f"{role.name} "
             f"(niveau {level})"
         )
+
 
 # =========================
 # COMMANDE /NIVEAU
@@ -345,6 +347,7 @@ async def on_ready():
 
     print("Système XP chargé !")
 
+
 # =========================
 # MESSAGE
 # =========================
@@ -503,7 +506,7 @@ async def on_message(message):
 
 
 # =========================
-# DÉMARRAGE
+# VÉRIFICATION DU TOKEN
 # =========================
 
 if not TOKEN:
@@ -513,4 +516,49 @@ if not TOKEN:
         "dans le fichier .env"
     )
 
+
+# =========================
+# SERVEUR HTTP POUR RENDER
+# =========================
+
+class HealthHandler(BaseHTTPRequestHandler):
+
+    def do_GET(self):
+
+        self.send_response(200)
+        self.end_headers()
+
+        self.wfile.write(
+            b"thecrock is online"
+        )
+
+    def log_message(self, format, *args):
+        return
+
+
+def start_web_server():
+
+    port = int(
+        os.getenv("PORT", "10000")
+    )
+
+    server = HTTPServer(
+        ("0.0.0.0", port),
+        HealthHandler
+    )
+
+    server.serve_forever()
+
+
+threading.Thread(
+    target=start_web_server,
+    daemon=True
+).start()
+
+
+# =========================
+# DÉMARRAGE
+# =========================
+
 bot.run(TOKEN)
+```
