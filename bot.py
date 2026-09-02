@@ -1,4 +1,3 @@
-```python
 import os
 import json
 import random
@@ -561,4 +560,3 @@ threading.Thread(
 # =========================
 
 bot.run(TOKEN)
-```
